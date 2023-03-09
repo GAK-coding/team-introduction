@@ -6,7 +6,9 @@ export default function Header() {
   return (
     <Wrapper>
       <Logo>
-        <Link to={"/"}>GAK</Link>
+        <Link to={"/"}>
+          <img src="logo.png" alt="logo" />
+        </Link>
       </Logo>
       <Nav>
         <Link to={"/info"}>Info</Link>
