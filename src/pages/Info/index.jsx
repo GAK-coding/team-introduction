@@ -30,7 +30,6 @@ export default function Info() {
       </Infomaion>
     </Box>
     <Skill>
-      
         <img src="html.png" alt="logo" />
         <img src="spring.png" alt="logo" />
         <img src="js.png" alt="logo" />
