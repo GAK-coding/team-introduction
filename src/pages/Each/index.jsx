@@ -6,7 +6,7 @@ const infos = {
   오현: ["../image/ohhyun.png","권오현", "Gachon Univ, Computer Engineering","qhslsl@gmail.com","010-3339-4278","5hyun"],
   준: ["../image/june.png","장준", "Gachon Univ, Software","junnim123@naver.com","010-7185-8273","tun111-jun"],
   채영: ["../image/chaeyoung.png","오채영", "Gachon Univ, Software","dhcod@gachon.ac.kr","010-8971-6029","CHCHAENG"],
-  은령: ["../image/eunryeong.png","박은령", "Gachon Univ, Software","lyungeg@gmail.com","010-8595-0745","eunryeong1"],
+  은령: ["../image/eunryeong.png","박은령", "Gachon Univ,  Industrial engineering / Software","lyungeg@gmail.com","010-8595-0745","eunryeong1"],
   윤정: ["../image/yunjung.png","김윤정", "Gachon Univ, Software","yjung2036@gmail.com","010-3162-1629","yunjjung"]
 };
 

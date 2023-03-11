@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Box=styled.div`
-    width: 80%;
+    width: 70%;
     height:50%;
     margin: auto;
     margin-top:4%;
@@ -12,7 +12,7 @@ export const Box=styled.div`
 `;
 
 export const Face = styled.div`
-    width:50%;
+    width:45%;
     float:left;
     align-items: center;
     img {
@@ -33,9 +33,9 @@ export const Detail = styled.div`
 
 
 export const Infomaion=styled.div`
-    width:50%;
+    width:55%;
     float:right;
-    margin-right: 5% ;
+    margin-right: 1% ;
     margin-top:4%;
     display: block;
     p {
