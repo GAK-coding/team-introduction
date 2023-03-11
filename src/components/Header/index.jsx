@@ -3,6 +3,11 @@ import { Logo, Nav, Wrapper } from "./styles";
 import { Link } from "react-router-dom";
 import { UncontrolledCollapse,  CardBody, Card } from 'reactstrap';
 
+/*
+ npm install --save reactstrap
+ npm install --save bootstrap
+*/
+
 export default function Header() {
   return (
     <Wrapper>
