@@ -4,7 +4,7 @@ import Info from "./pages/Info";
 import Rule from "./pages/Rule";
 import Each from "./pages/Each";
 import Header from "./components/Header";
-import "./App.css";
+
 
 function App() {
   return (
