@@ -1,11 +1,25 @@
 import React from "react";
 import styled from "styled-components";
 
-export const Title = styled.div`
+export const Wrapper=styled.div`
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+
+
+
+`
+;
+export const Content = styled.div`
+    display:flex;
+    align-items:${(props)=>props.location}
+    `
+    ;
+export const Title = styled.h3`
     text-align: center;
     font-size: 30px;
-    font-weight: bold;`
-;
+    font-weight: bold;
+    align-item:${(props)=>props.location}`
+    ;
 
 
 export const Rule = styled.div`
@@ -15,4 +29,4 @@ export const Rule = styled.div`
     background-color:pink;
     text-align: center;
     font-size: 18px;`
-;
+    ;
