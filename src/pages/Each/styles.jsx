@@ -1,67 +1,72 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+export const Box=styled.div`
+    width: 80%;
+    height:50%;
+    margin: auto;
+    margin-top:4%;
+    padding:2% 1%;
     display: flex;
-    flex-direction: row;
+    background-color:lightblue;
+  
+`;
+
+export const Face = styled.div`
+    width:50%;
+    float:left;
     align-items: center;
-    padding: 35px 30px;
-    gap: 126px;
-
-    position: absolute;
-    width: 900px;
-    height: 391px;
-    left: 34%;
-    top: 20%;
-    background: rgba(244, 229, 194, 0.55);
-    
+    img {
+        width: 60%;
+        margin-left: 20%;
+        display: block;
+        
+    }
+    p{
+        text-align : center;
+        font-size: 1.5rem;
+        margin-top:3%;
+    }
+`;
+export const Detail = styled.div`
+    margin-top:5%;
 `;
 
-export const BoxOne = styled.div`
+
+export const Infomaion=styled.div`
+    width:50%;
+    float:right;
+    margin-right: 5% ;
+    margin-top:4%;
+    display: block;
+    p {
+        margin:0.9rem;
+        font-size: 1.4rem;
+        margin-top:7%;
+
+        
+    }
+    img{
+        float:left;
+        margin-right:3%;
+        
+    }
+`;
+
+export const Skill=styled.div`
+    height:50%;
+    width:80%;
+    margin: auto;
+    margin-top:4%;
+    padding:2% 1%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center
-    padding: 0px;
-    gap: 26px;
-   
-    width: 250px;
-    height: 321px;
-    
+    justify-content: space-between;
+
+    img {
+        width: 16%;
+        height:16%;
+        margin: 3%;
+        display: block;
+    }
 
 `;
 
-export const BoxTwo = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px 10px;
-    gap: 25px;
-    
-    width: 349px;
-    height: 235px;
-`;
-export const BoxThree = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0px;
-    gap: 38px;
-
-    width: 500px;
-    height: 40px;
-`;
-
-export const BoxFour = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    
-    gap: 66px;
-
-    position: absolute;
-    width: 1030px;
-    height: 136px;
-    
-    top: 550px;
-    left:-100px;
-`;
