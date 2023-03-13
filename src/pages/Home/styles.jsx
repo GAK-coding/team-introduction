@@ -24,7 +24,7 @@ export const Catchphrase = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 350px;
+  //margin-top: 350px;
 
   p {
     font-size: 35px;
@@ -39,5 +39,30 @@ export const Catchphrase = styled.div`
     bottom: 33px;
     background: rgba(244, 229, 194, 0.55);
     z-index: 1;
+  }
+`;
+
+export const Team = styled.div`
+  width: 80%;
+  margin: 3rem auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const User = styled.span`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  img {
+    width: 50%;
+  }
+
+  span {
+    margin-top: 1rem;
+    font-size: 30px;
+    color: #464646;
   }
 `;
