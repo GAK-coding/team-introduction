@@ -6,6 +6,7 @@ import Rule from "./pages/Rule";
 import Each from "./pages/Each";
 import Header from "./components/Header";
 
+
 function App() {
   return (
     <BrowserRouter>
