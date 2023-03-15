@@ -1,9 +1,18 @@
 import React from "react";
 import { Catchphrase, Team, User, Vision } from "./styles";
+import { Link, useNavigate } from "react-router-dom";
 
-const users = ["오현", "준", "은령", "채영", "윤정"];
+const users = [
+  { name: "준", img: "june" },
+  { name: "오현", img: "ohhyun" },
+  { name: "은령", img: "eunryeong" },
+  { name: "채영", img: "chaeyoung" },
+  { name: "윤정", img: "yunjung" },
+];
 
 export default function Home() {
+  const navigate = useNavigate();
+
   return (
     <>
       <Vision>
@@ -11,12 +20,15 @@ export default function Home() {
       </Vision>
       <Team>
         {users.map((user) => (
-          <User>
-            <img
-              src="https://item.kakaocdn.net/do/fd0050f12764b403e7863c2c03cd4d2d7154249a3890514a43687a85e6b6cc82"
-              alt={user}
-            />
-            <span>{user}</span>
+          <User
+            onClick={() => {
+              navigate(`/info/${user.name}`);
+            }}
+          >
+            <div>
+              <img src={`../image/${user.img}.png`} alt={user.name} />
+            </div>
+            <span>{user.name}</span>
           </User>
         ))}
       </Team>

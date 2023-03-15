@@ -49,15 +49,26 @@ export const Team = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  cursor: pointer;
 `;
 
 export const User = styled.span`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 20%;
+
+  & > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+  }
 
   img {
-    width: 50%;
+    width: 80%;
   }
 
   span {
