@@ -25,14 +25,14 @@ export const Logo = styled.div`
 `;
 
 export const Nav = styled.div`
-    display: flex;
-    flex-direction: row;
-  p{
+  display: flex;
+  flex-direction: row;
+  p {
     font-size: 30px;
     margin-left: 2rem;
-    }
+    cursor: pointer;
+  }
   a {
-    
     font-size: 30px;
     margin-left: 2rem;
   }
