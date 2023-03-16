@@ -67,6 +67,16 @@ export const User = styled.span`
     width: 100%;
   }
 
+  width: 20%;
+
+  & > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+  }
+
   img {
     width: 80%;
   }
