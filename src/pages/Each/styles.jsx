@@ -63,7 +63,7 @@ export const Skill = styled.div`
 
   img {
     width: 10%;
-    height: 16%;
+    height: 10%;
     display: block;
   }
 `;
