@@ -4,6 +4,7 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(3,1fr);
+    
 `
     ;
 export const Content = styled.div`
@@ -12,6 +13,7 @@ export const Content = styled.div`
     // grid-row-start: ${(props) => props.rs};
     // grid-row-end: ${(props) => props.re};
     // z-index: ;
+    font-family: bingle;
     text-align: center;
     align-items: center;
     `
@@ -37,3 +39,5 @@ export const Rule = styled.div`
     text-align: center;
     font-size: 18px;`
     ;
+
+
