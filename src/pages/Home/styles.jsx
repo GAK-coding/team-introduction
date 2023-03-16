@@ -49,6 +49,7 @@ export const Team = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
   cursor: pointer;
 `;
 
@@ -56,6 +57,15 @@ export const User = styled.span`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 20%;
+
+  & > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+  }
 
   width: 20%;
 

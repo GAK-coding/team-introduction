@@ -1,6 +1,5 @@
 import React from "react";
 import { Catchphrase, Team, User, Vision } from "./styles";
-
 import { Link, useNavigate } from "react-router-dom";
 
 const users = [
