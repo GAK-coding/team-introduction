@@ -61,9 +61,8 @@ export const Skill = styled.div`
   justify-content: space-between;
   align-items: center;
   img {
-    width: 16%;
-    height: 16%;
-    margin: 4.5%;
+    width: 10%;
+    height: 10%;
     display: block;
   }
 `;
