@@ -7,6 +7,11 @@ export const Wrapper = styled.section`
   textarea {
     resize: none;
     font-size: 1.2rem;
+
+    &:hover,
+    &:focus {
+      border: 1px solid #e0e0e0;
+    }
   }
 `;
 
