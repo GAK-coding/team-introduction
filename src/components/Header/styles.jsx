@@ -32,7 +32,8 @@ export const Nav = styled.div`
     margin-left: 2rem;
     cursor: pointer;
   }
-  a {
+  & > a,
+  & > div > span {
     font-size: 30px;
     margin-left: 2rem;
   }

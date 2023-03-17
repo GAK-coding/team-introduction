@@ -1,23 +1,45 @@
-import React, { useCallback, useState } from "react";
+import React, { useState } from "react";
 import { Col, Row } from "antd";
 import FormInfo from "../../components/FormInfo";
 import Form from "../../components/Form";
+import { AddQuestion, SubmitBtn } from "./styles";
+import { v4 as uuid } from "uuid";
 
 export default function MakeForm() {
+  const [infos, setInfos] = useState({ title: "", explanation: "" });
+
+  const onChangeTitle = (e) => {
+    let temp = { ...infos };
+    temp.title = e.target.value;
+    setInfos(temp);
+  };
+
+  const onChangeExplanation = (e) => {
+    let temp = { ...infos };
+    temp.explanation = e.target.value;
+    setInfos(temp);
+  };
+
   const [items, setItems] = useState([
     {
+      id: uuid(),
       question: "",
       type: "객관식",
-      values: ["옵션1"],
+      values: [{ value: "", state: false }],
     },
     {
+      id: uuid(),
       question: "",
       type: "주관식",
     },
     {
+      id: uuid(),
       question: "",
       type: "찬부식",
-      values: ["예", "아니요"],
+      values: [
+        { value: "예", state: false },
+        { value: "아니요", state: false },
+      ],
     },
   ]);
 
@@ -34,9 +56,13 @@ export default function MakeForm() {
     let temp = [...items];
     let item = temp.splice(id, 1)[0];
     item["type"] = value;
-    if (value === "객관식") item["values"] = ["옵션1"];
+    if (value === "객관식") item["values"] = [{ value: "옵션1", state: false }];
     else if (value === "주관식") delete item["values"];
-    else item["values"] = ["예", "아니요"];
+    else
+      item["values"] = [
+        { value: "예", state: false },
+        { value: "아니요", state: false },
+      ];
 
     temp.splice(id, 0, item);
     setItems(temp);
@@ -45,7 +71,7 @@ export default function MakeForm() {
   const onChangeOption = (id, optId, e) => {
     let temp = [...items];
     let item = temp.splice(id, 1)[0];
-    item["values"][optId] = e.target.value;
+    item["values"][optId]["value"] = e.target.value;
 
     temp.splice(id, 0, item);
     setItems(temp);
@@ -54,7 +80,7 @@ export default function MakeForm() {
   const addOption = (id) => {
     let temp = [...items];
     let item = temp.splice(id, 1)[0];
-    item["values"].push("");
+    item["values"].push({ value: "", state: false });
 
     temp.splice(id, 0, item);
     setItems(temp);
@@ -71,9 +97,10 @@ export default function MakeForm() {
   const addItem = () => {
     let temp = [...items];
     temp.push({
+      id: uuid(),
       question: "",
       type: "객관식",
-      values: ["옵션1"],
+      values: [{ value: "옵션1", state: false }],
     });
     setItems(temp);
   };
@@ -84,19 +111,22 @@ export default function MakeForm() {
     setItems(temp);
   };
 
-  console.log(items);
+  console.log(JSON.stringify({ infos, items }));
 
   return (
     <div>
       <Row>
-        <Col span={3}>
-          <button onClick={addItem}>질문 추가</button>
-        </Col>
-        <Col span={18} style={{ padding: "0 2rem" }}>
-          <FormInfo />
+        <Col span={4} />
+        <Col span={16} style={{ padding: "0 2rem" }}>
+          <FormInfo
+            infos={infos}
+            onChangeTitle={onChangeTitle}
+            onChangeExplanation={onChangeExplanation}
+          />
 
           {items.map((item, idx) => (
             <Form
+              key={item.id}
               item={item}
               idx={idx}
               onChangeQuestion={onChangeQuestion}
@@ -107,8 +137,16 @@ export default function MakeForm() {
               deleteOption={deleteOption}
             />
           ))}
+
+          <SubmitBtn>
+            <button>폼 생성하기</button>
+          </SubmitBtn>
         </Col>
-        <Col span={3}></Col>
+        <Col span={4}>
+          <AddQuestion onClick={addItem}>
+            <span>질문 추가</span>
+          </AddQuestion>
+        </Col>
       </Row>
     </div>
   );

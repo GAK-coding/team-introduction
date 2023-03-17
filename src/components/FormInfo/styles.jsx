@@ -2,7 +2,19 @@ import styled from "styled-components";
 import TextArea from "antd/es/input/TextArea";
 
 export const Wrapper = styled.section`
-  margin-bottom: 3rem;
+  margin: 2rem 0;
+  padding: 1rem;
+
+  border: 1px solid;
+  border-radius: 15px;
+
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19),
+    0 6px 6px rgba(0, 0, 0, 0.23);
+  -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19),
+    0 6px 6px rgba(0, 0, 0, 0.23);
+  -ms-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  -o-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 
   textarea {
     resize: none;
@@ -26,6 +38,7 @@ export const Title = styled.div`
 
     &:focus {
       outline: none;
+      border-bottom: 1px solid black;
     }
   }
   margin-bottom: 1rem;
@@ -33,4 +46,5 @@ export const Title = styled.div`
 
 export const Explanation = styled(TextArea)`
   height: 5rem;
+  margin-bottom: 1rem;
 `;

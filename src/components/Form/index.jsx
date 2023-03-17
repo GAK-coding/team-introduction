@@ -1,5 +1,5 @@
 import React from "react";
-import { FormWrapper, Select, Title } from "./styles";
+import { FormWrapper, Option, Select, ShortAnswer, Title } from "./styles";
 
 const types = ["객관식", "주관식", "찬부식"];
 
@@ -34,23 +34,24 @@ export default function Form({
           </select>
 
           <div>
-            <button onClick={() => deleteItem(idx)}>질문 삭제</button>
+            <button onClick={() => deleteItem(idx)}>X</button>
           </div>
         </Select>
       </div>
-      <div>
-        {item.type === "주관식" && <div>주관식입니다.</div>}
+      <Option>
+        {item.type === "주관식" && <ShortAnswer>단답형 텍스트</ShortAnswer>}
         {(item.type === "객관식" || item.type === "찬부식") && (
           <div>
             {item.values?.map((opt, optId) => (
-              <div>
+              <div key={optId}>
                 <input
                   type="text"
-                  value={opt}
+                  value={opt.value}
                   onChange={(e) => onChangeOption(idx, optId, e)}
+                  placeholder={"옵션을 입력해주세요."}
                 />
                 {optId !== 0 && item.type === "객관식" && (
-                  <button onClick={() => deleteOption(idx, optId)}>-</button>
+                  <button onClick={() => deleteOption(idx, optId)}>X</button>
                 )}
               </div>
             ))}
@@ -59,7 +60,7 @@ export default function Form({
             )}
           </div>
         )}
-      </div>
+      </Option>
     </FormWrapper>
   );
 }

@@ -1,19 +1,11 @@
-import React, { useCallback, useState } from "react";
+import React from "react";
 import { Explanation, Title, Wrapper } from "./styles";
-import { Input } from "antd";
 
-export default function FormInfo() {
-  const [title, setTitle] = useState("");
-  const [explanation, setExplanation] = useState("");
-
-  const onChangeTitle = useCallback((e) => {
-    setTitle(e.target.value);
-  }, []);
-
-  const onChangeExplanation = useCallback((e) => {
-    setExplanation(e.target.value);
-  }, []);
-
+export default function FormInfo({
+  infos: { title, explanation },
+  onChangeTitle,
+  onChangeExplanation,
+}) {
   return (
     <Wrapper>
       <Title>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Logo, Nav, Wrapper } from "./styles";
 import { Link } from "react-router-dom";
 import { UncontrolledCollapse, CardBody, Card } from "reactstrap";
@@ -9,6 +9,10 @@ import { UncontrolledCollapse, CardBody, Card } from "reactstrap";
 */
 
 export default function Header() {
+  const [isClick, setIsClick] = useState(false);
+
+  const toggleIsClick = () => setIsClick((prev) => !prev);
+
   return (
     <Wrapper>
       <Logo>
@@ -36,7 +40,8 @@ export default function Header() {
             </CardBody>
           </Card>
         </UncontrolledCollapse>
-        <Link to={"/makeform"}>Form</Link>
+        <Link to={"/makeform"}>Make Form</Link>
+        <Link to={"/resform"}>Res Form</Link>
       </Nav>
     </Wrapper>
   );

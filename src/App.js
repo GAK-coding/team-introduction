@@ -7,6 +7,7 @@ import Each from "./pages/Each";
 import Header from "./components/Header";
 import MakeForm from "./pages/MakeForm";
 import "./App.css";
+import ResForm from "./pages/ResForm";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path={"info/:name"} element={<Each />} />
           <Route path={"rule"} element={<Rule />} />
           <Route path={"makeform"} element={<MakeForm />} />
+          <Route path={"resform"} element={<ResForm />} />
         </Routes>
       </div>
     </BrowserRouter>
