@@ -1,4 +1,4 @@
-export const testdata = {
+export const formdata = {
   infos: { title: "테스트 제목", explanation: "우와 재밌는 설문이에요!" },
   items: [
     {
@@ -8,6 +8,8 @@ export const testdata = {
       values: [
         { value: "사망고", state: false },
         { value: "할망고", state: false },
+        { value: "썩음", state: false },
+        { value: "모름", state: false },
       ],
     },
     {

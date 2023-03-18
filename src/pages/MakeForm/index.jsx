@@ -114,40 +114,38 @@ export default function MakeForm() {
   console.log(JSON.stringify({ infos, items }));
 
   return (
-    <div>
-      <Row>
-        <Col span={4} />
-        <Col span={16} style={{ padding: "0 2rem" }}>
-          <FormInfo
-            infos={infos}
-            onChangeTitle={onChangeTitle}
-            onChangeExplanation={onChangeExplanation}
+    <Row>
+      <Col span={4} />
+      <Col span={16} style={{ padding: "0 2rem" }}>
+        <FormInfo
+          infos={infos}
+          onChangeTitle={onChangeTitle}
+          onChangeExplanation={onChangeExplanation}
+        />
+
+        {items.map((item, idx) => (
+          <Form
+            key={item.id}
+            item={item}
+            idx={idx}
+            onChangeQuestion={onChangeQuestion}
+            onChangeType={onChangeType}
+            onChangeOption={onChangeOption}
+            addOption={addOption}
+            deleteItem={deleteItem}
+            deleteOption={deleteOption}
           />
+        ))}
 
-          {items.map((item, idx) => (
-            <Form
-              key={item.id}
-              item={item}
-              idx={idx}
-              onChangeQuestion={onChangeQuestion}
-              onChangeType={onChangeType}
-              onChangeOption={onChangeOption}
-              addOption={addOption}
-              deleteItem={deleteItem}
-              deleteOption={deleteOption}
-            />
-          ))}
-
-          <SubmitBtn>
-            <button>폼 생성하기</button>
-          </SubmitBtn>
-        </Col>
-        <Col span={4}>
-          <AddQuestion onClick={addItem}>
-            <span>질문 추가</span>
-          </AddQuestion>
-        </Col>
-      </Row>
-    </div>
+        <SubmitBtn>
+          <button>폼 생성하기</button>
+        </SubmitBtn>
+      </Col>
+      <Col span={4}>
+        <AddQuestion onClick={addItem}>
+          <span>질문 추가</span>
+        </AddQuestion>
+      </Col>
+    </Row>
   );
 }

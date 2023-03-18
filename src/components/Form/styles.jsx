@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const FormWrapper = styled.section`
-  //min-height: 12rem;
   border: 1px solid;
   border-radius: 20px;
   margin-bottom: 2rem;
