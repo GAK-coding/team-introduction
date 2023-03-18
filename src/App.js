@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Info from "./pages/Info";
 import Rule from "./pages/Rule";
 import Each from "./pages/Each";
+import Form from "./pages/Form";
 import Header from "./components/Header";
 import "./App.css";
 
@@ -17,6 +18,7 @@ function App() {
           <Route path={"info"} element={<Info />} />
           <Route path={"info/:name"} element={<Each />} />
           <Route path={"rule"} element={<Rule />} />
+          <Route path={"form"} element={<Form />} />
         </Routes>
       </div>
     </BrowserRouter>

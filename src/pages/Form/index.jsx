@@ -16,9 +16,9 @@ export default function Form() {
 
   const onCheckedItem = ({ target }) => {
     if (target.checked) {
+      setCheckebox(true);
       answer.push({ type: "checkbox", value: target.id });
       console.log(answer);
-      setCheckebox(true);
     } else {
       setCheckebox(false);
     }
