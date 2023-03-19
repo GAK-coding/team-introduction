@@ -111,7 +111,7 @@ export default function MakeForm() {
     setItems(temp);
   };
 
-  console.log(JSON.stringify({ infos, items }));
+  console.log({ infos, items });
 
   return (
     <Row>
