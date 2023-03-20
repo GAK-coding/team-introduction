@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Logo, Nav, Wrapper } from "./styles";
 import { Link } from "react-router-dom";
 import { UncontrolledCollapse, CardBody, Card } from "reactstrap";
@@ -18,7 +18,6 @@ export default function Header() {
       </Logo>
       <Nav>
         <Link to={"/rule"}>Rule</Link>
-        <Link to={"/form"}>Form</Link>
         <p color="warning" id="toggle">
           Info
         </p>
@@ -37,6 +36,8 @@ export default function Header() {
             </CardBody>
           </Card>
         </UncontrolledCollapse>
+        <Link to={"/makeform"}>Make Form</Link>
+        <Link to={"/resform"}>Res Form</Link>
       </Nav>
     </Wrapper>
   );

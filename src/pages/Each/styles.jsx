@@ -60,6 +60,7 @@ export const Skill = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   img {
     width: 10%;
     height: 10%;

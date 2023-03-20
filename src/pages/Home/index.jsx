@@ -19,8 +19,9 @@ export default function Home() {
         <p>Go At Kernel</p> <img src="main_logo.png" alt="gak"></img>
       </Vision>
       <Team>
-        {users.map((user) => (
+        {users.map((user, idx) => (
           <User
+            key={idx}
             onClick={() => {
               navigate(`/info/${user.name}`);
             }}

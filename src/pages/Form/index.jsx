@@ -55,7 +55,7 @@ export default function Form() {
       </Title>
       <ContentCh>
         {checkboxList.map((item) => (
-          <label clasName="checkboxLabel" key={item.id}>
+          <label className="checkboxLabel" key={item.id}>
             <input
               type="checkbox"
               value={item.name}

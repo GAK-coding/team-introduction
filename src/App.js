@@ -6,7 +6,9 @@ import Rule from "./pages/Rule";
 import Each from "./pages/Each";
 import Form from "./pages/Form";
 import Header from "./components/Header";
+import MakeForm from "./pages/MakeForm";
 import "./App.css";
+import ResForm from "./pages/ResForm";
 
 function App() {
   return (
@@ -18,7 +20,9 @@ function App() {
           <Route path={"info"} element={<Info />} />
           <Route path={"info/:name"} element={<Each />} />
           <Route path={"rule"} element={<Rule />} />
-          <Route path={"form"} element={<Form />} />
+          <Route path={"makeform"} element={<MakeForm />} />
+          <Route path={"resform"} element={<ResForm />} />
+
         </Routes>
       </div>
     </BrowserRouter>
