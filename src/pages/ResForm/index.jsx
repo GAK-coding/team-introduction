@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Col, Row } from "antd";
 import { SubmitBtn } from "../MakeForm/styles";
 import { FromWrapper } from "./styles";
@@ -7,6 +7,19 @@ import AskForm from "../../components/AskForm";
 
 export default function ResForm() {
   const { infos, items } = formdata;
+
+  const [checkedList, setCheckedList] = useState([]);
+
+  // 체크시 데이터 저장, 해제시 데이터 삭제
+  const onCheckedElement = (checked, item) => {
+    if (checked) {
+      setCheckedList([...checkedList, item]);
+      console.log(item, " 이 체크 되었다");
+    } else if (!checked) {
+      setCheckedList(checkedList.filter((el) => el !== item));
+      console.log(item, " 이 체크가 취소되었다");
+    }
+  };
 
   return (
     <Row>
