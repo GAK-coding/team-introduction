@@ -3,8 +3,31 @@ import { Col, Row } from "antd";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { lottoNum, myNum, myNumInput } from "../../recoil/Lotto/atom";
 import { checkDraw } from "../../recoil/Lotto/checkDraw";
+import { DrawBtn, InputWrapper, LottoNumWrapper, Each, Result } from "./styles";
 
 export default function Lotto() {
+  const lottoColors = [
+    "#FFC300",
+    "#FF5733",
+    "#C70039",
+    "#900C3F",
+    "#581845",
+    "#00BFFF",
+    "#00FF7F",
+    "#FF1493",
+    "#8A2BE2",
+  ];
+  const myColors = [
+    "#FF69B4",
+    "#00BFFF",
+    "#FFD700",
+    "#32CD32",
+    "#9370DB",
+    "#FFA07A",
+    "#00FFFF",
+    "#FFC0CB",
+    "#7B68EE",
+  ];
   const [isClick, setIsClick] = useState(false);
   const [lottoNums, setLottoNums] = useRecoilState(lottoNum);
   const [my, setMy] = useRecoilState(myNum);
@@ -51,38 +74,77 @@ export default function Lotto() {
     setIsClick(true);
   };
 
+  console.log(correct);
+
   return (
     <Row>
       <Col span={4} />
-      <Col span={16} style={{ padding: "0 2rem" }}>
-        <div>
-          <h2>추첨 번호</h2>
-          {lottoNums.map((num, idx) => (
-            <div key={idx}>{num}</div>
-          ))}
-        </div>
-        <div>
-          <h2>내 번호</h2>
-          <input
-            type="text"
-            value={myInput.num1}
-            onChange={(e) => onChangeMyInput(1, e)}
-          />
-          <input
-            type="text"
-            value={myInput.num2}
-            onChange={(e) => onChangeMyInput(2, e)}
-          />
-          {my.map((num, idx) => (
-            <div key={idx}>{num}</div>
-          ))}
-        </div>
+      <Col span={16}>
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <Each>
+            <h2>추첨 번호</h2>
+            <LottoNumWrapper>
+              {lottoNums.map((num, idx) => (
+                <div
+                  key={idx}
+                  style={{
+                    backgroundColor: lottoColors[idx % lottoColors.length],
+                  }}
+                >
+                  {num}
+                </div>
+              ))}
+            </LottoNumWrapper>
+          </Each>
+          <Each>
+            <h2>내 번호</h2>
+            <InputWrapper>
+              <span>첫 번째 번호: </span>
+              <input
+                type="text"
+                value={myInput.num1}
+                onChange={(e) => onChangeMyInput(1, e)}
+              />
+            </InputWrapper>
+            <InputWrapper>
+              <span>두 번째 번호: </span>
+              <input
+                type="text"
+                value={myInput.num2}
+                onChange={(e) => onChangeMyInput(2, e)}
+              />
+            </InputWrapper>
+            <LottoNumWrapper>
+              {my.map((num, idx) => (
+                <div
+                  key={idx}
+                  style={{ backgroundColor: myColors[idx % myColors.length] }}
+                >
+                  {num}
+                </div>
+              ))}
+            </LottoNumWrapper>
+          </Each>
 
-        <button onClick={onClickDraw}>추첨</button>
+          <div style={{ textAlign: "center" }}>
+            <DrawBtn onClick={onClickDraw}>추첨</DrawBtn>
+          </div>
 
-        {isClick && <div>{correct}</div>}
-        {correct.length >= 3 && correct.length < 9 && <div>보너스!</div>}
-        {correct.length === 9 && <div>대박!!!</div>}
+          {isClick && correct < 3 && (
+            <Result>{correct}개가 일치해 당첨이 되지 않았어요ㅠㅠ</Result>
+          )}
+          {(correct >= 3 || correct.length < 9) && (
+            <Result>{correct}개가 일치해 보너스!</Result>
+          )}
+          {correct === 9 && <Result>{correct}개가 일치해 대박!!!</Result>}
+        </div>
       </Col>
       <Col span={4} />
     </Row>
