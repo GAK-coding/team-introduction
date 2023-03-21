@@ -42,6 +42,7 @@ export default function Header() {
         </UncontrolledCollapse>
         <Link to={"/makeform"}>Make Form</Link>
         <Link to={"/resform"}>Res Form</Link>
+        <Link to={"/lotto"}>Lotto</Link>
       </Nav>
     </Wrapper>
   );
