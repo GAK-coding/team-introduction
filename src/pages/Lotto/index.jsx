@@ -68,13 +68,9 @@ export default function Lotto() {
     }
 
     setLottoNums(drawNums(9));
-    let tempMy = [...drawNums(7), n1, n2];
-    tempMy.sort((a, b) => a - b);
-    setMy(tempMy);
+    setMy(drawNums(9, [n1, n2]));
     setIsClick(true);
   };
-
-  console.log(correct);
 
   return (
     <Row>
