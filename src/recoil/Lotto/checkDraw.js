@@ -2,20 +2,20 @@ import { selector } from "recoil";
 import { lottoNum, myNum, prizeList } from "./atom";
 
 function calculateOverlap(arr1, arr2) {
+  const list = [];
+
   // use a Set to easily check for overlaps
   const set1 = new Set(arr1);
   const set2 = new Set(arr2);
 
-  let overlapCount = 0;
-
   // iterate over set1 and check if each item is also in set2
   set1.forEach((item) => {
     if (set2.has(item)) {
-      overlapCount++;
+      list.push(item);
     }
   });
 
-  return overlapCount;
+  return list;
 }
 
 export const checkDraw = selector({
