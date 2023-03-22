@@ -72,6 +72,8 @@ export default function Lotto() {
     setIsClick(true);
   };
 
+  console.log(correct);
+
   return (
     <Row>
       <Col span={4} />
@@ -119,12 +121,13 @@ export default function Lotto() {
             </InputWrapper>
             <LottoNumWrapper>
               {my.map((num, idx) => (
-                <div
+                <LottoNumWrapper
                   key={idx}
                   style={{ backgroundColor: myColors[idx % myColors.length] }}
                 >
                   {num}
-                </div>
+                  {correct.includes(num) && <span>✓</span>}
+                </LottoNumWrapper>
               ))}
             </LottoNumWrapper>
           </Each>
@@ -133,13 +136,17 @@ export default function Lotto() {
             <DrawBtn onClick={onClickDraw}>추첨</DrawBtn>
           </div>
 
-          {isClick && correct < 3 && (
-            <Result>{correct}개가 일치해 당첨이 되지 않았어요ㅠㅠ</Result>
+          {isClick && correct.length < 3 && (
+            <Result>
+              {correct.length}개가 일치해 당첨이 되지 않았어요ㅠㅠ
+            </Result>
           )}
-          {(correct >= 3 || correct.length < 9) && (
-            <Result>{correct}개가 일치해 보너스!</Result>
+          {(correct.length >= 3 || correct.length.length < 9) && (
+            <Result>{correct.length}개가 일치해 보너스!</Result>
           )}
-          {correct === 9 && <Result>{correct}개가 일치해 대박!!!</Result>}
+          {correct.length === 9 && (
+            <Result>{correct.length}개가 일치해 대박!!!</Result>
+          )}
         </div>
       </Col>
       <Col span={4} />

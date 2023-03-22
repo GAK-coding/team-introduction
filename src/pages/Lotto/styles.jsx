@@ -8,6 +8,7 @@ export const Each = styled.div`
 export const LottoNumWrapper = styled.div`
   display: flex;
   justify-content: center;
+  position: relative;
 
   & > div {
     display: flex;
@@ -20,9 +21,20 @@ export const LottoNumWrapper = styled.div`
     border: 2px solid;
     border-radius: 50%;
     margin-right: 1rem;
+    margin-top: 0.6rem;
 
     color: white;
     font-size: 1.2rem;
+  }
+
+  & > span {
+    position: absolute;
+    top: -23px;
+    right: -10px;
+
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #23a801;
   }
 `;
 
