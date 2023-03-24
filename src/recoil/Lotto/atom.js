@@ -20,5 +20,5 @@ export const myNumInput = atom({
 
 export const prizeList = atom({
   key: "prizeList",
-  default: 0,
+  default: [],
 });
