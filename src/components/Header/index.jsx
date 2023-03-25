@@ -9,10 +9,6 @@ import { UncontrolledCollapse, CardBody, Card } from "reactstrap";
 */
 
 export default function Header() {
-  const [isClick, setIsClick] = useState(false);
-
-  const toggleIsClick = () => setIsClick((prev) => !prev);
-
   return (
     <Wrapper>
       <Logo>

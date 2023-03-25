@@ -26,7 +26,7 @@ export const checkDraw = selector({
 
     return calculateOverlap(lottoList, myList);
   },
-  set: ({ set }, newValue) => {
-    set(prizeList, newValue);
-  },
+  // set: ({ set }, newValue) => {
+  //   set(prizeList, newValue);
+  // },
 });
